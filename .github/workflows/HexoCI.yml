@@ -1,4 +1,4 @@
-# workflow name 
+# workflow name
 name: HexoCI
 
 # master branch on push, auto run
