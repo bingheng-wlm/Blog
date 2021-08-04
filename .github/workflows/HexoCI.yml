@@ -65,11 +65,11 @@ jobs:
         # 注意替换为你的 Gitee 目标仓库地址
         destination-repo: git@gitee.com:bingheng_wlm/bingheng_wlm.gitee.io.git
         
-      - name: Deploy Hexo For Gitee
-        uses: yanglbme/gitee-pages-action@v1.2.8
-        with:
-          deploy_key: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
-          gitee-username: bingheng_wlm
-          gitee-password: ${{ secrets.GITEE_PASSWORD }} 
-          gitee-repo: bingheng_wlm/bingheng_wlm.gitee.io #推送到该仓库中，地址格式为github名称/仓库名
-          branch: master #分支名
+    - name: Deploy Hexo For Gitee
+      uses: yanglbme/gitee-pages-action@v1.2.8
+      with:
+        deploy_key: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
+        gitee-username: bingheng_wlm
+        gitee-password: ${{ secrets.GITEE_PASSWORD }} 
+        gitee-repo: bingheng_wlm/bingheng_wlm.gitee.io #推送到该仓库中，地址格式为github名称/仓库名
+        branch: master #分支名
