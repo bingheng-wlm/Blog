@@ -1,12 +1,16 @@
 ---
-title: talk
+title: 说说
 date: 2021-08-05 13:58:41
 ---
+
+<h3>
+    <center>只是随口说说罢了</center>
+</h3>
 
 {% raw %}
 <div id="hpp_talk"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@1.2.0/talk.css" />
-<script src="https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@1.2.0/talk_user.js"></script>
+<script src="/js/talk_user.js"></script>
 <script>
 new hpp_talk({
     id: "hpp_talk",
