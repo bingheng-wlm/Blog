@@ -5,6 +5,7 @@ Allow: /about/
 Allow: /archives/
 Allow: /categories/
 Allow: /links/
+Allow: /posts/
 Allow: /tags/
 Allow: /talk/
 Crawl-delay: 5
