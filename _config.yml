@@ -103,5 +103,7 @@ theme: hexo-theme-fluid-1.8.11
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:bingheng-wlm/bingheng-wlm.github.io.git
+  repo:
+    github: git@github.com:bingheng-wlm/bingheng-wlm.github.io.git
+    coding: git@e.coding.net:bingheng-wlm/blog/blog.git
   branch: master
