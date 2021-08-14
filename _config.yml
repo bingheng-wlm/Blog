@@ -99,7 +99,40 @@ exclude:
 ignore:
 
 # Settings of hexo-all-minifier
+# =====START=====
 all_minifier: true
+
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
+    
+js_minifier:
+  enable: true
+  mangle: true
+  compress:
+  exclude:
+    - '*.min.js'
+js_concator:
+  enable: false
+  bundle_path: '/js/bundle.js'
+  front: false
+  silent: false
+
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+
+# ======END======
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
