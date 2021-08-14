@@ -46,7 +46,7 @@ jobs:
         npm install gulp-babel --save
         npm install babel-preset-es2015 --save
         npm install babel-plugin-transform-remove-strict-mode --save
-        npm install babel-plugin-proposal-class-properties
+        npm install --save-dev @babel/plugin-proposal-class-properties
         
         npm install
     
