@@ -46,6 +46,9 @@ jobs:
         npm install gulp-babel@7.0.1 --save
         npm install babel-preset-es2015@6.24.1 --save
         npm install babel-plugin-transform-remove-strict-mode --save
+        npm audit fix
+        npm audit fix --force
+        npm audit
         
         npm install
     
@@ -68,4 +71,5 @@ jobs:
       run: |
         hexo clean
         hexo generate 
+        gulp
         hexo deploy
