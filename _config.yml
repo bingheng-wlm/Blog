@@ -118,30 +118,33 @@ deploy:
   branch: master
 
 # Compress
-## hexo-neat
-### md博文压缩
-neat_enable: true
-### 压缩html（ejs，swig等也属于html格式片段）
-neat_html:
+## html
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+## css
+css_minifier:
   enable: true
   exclude:
-    - '**/baidu*.html'
-    - '**/google*.html'
-### 压缩css  
-neat_css:
+    - '*.min.css'   
+## js
+js_minifier:
   enable: true
-  exclude:
-    - '*.min.css'
-    - '**/*.min.css'
-    - 'jquery.fancybox.min.css'
-    - '**/live2d-widget/waifu.css'
-### 压缩js
-neat_js:
-  enable: true
-  mangle: true #打印日志
-  output:
+  mangle: true
   compress:
-  exclude: #排除文件
+  exclude:
     - '*.min.js'
-    - '**/*.min.js'
-    - 'jquery.fancybox.min.js'
+js_concator:
+  enable: false
+  bundle_path: '/js/bundle.js'
+  front: false
+  silent: false
+## img
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
