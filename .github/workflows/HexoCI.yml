@@ -36,7 +36,8 @@ jobs:
         npm install hexo-generator-baidu-sitemap --save
         npm install hexo-abbrlink --save
         npm install -g gulp
-        npm install gulp gulp-htmlclean gulp-htmlmin gulp-clean-css gulp-uglify-es gulp-imagemin del gulp-minify-inline-json --save-dev
+        npm install gulp gulp-htmlclean gulp-htmlmin gulp-clean-css gulp-uglify-es del gulp-minify-inline-json --save-dev
+        npm install --save-dev gulp-imagemin
         npm install --save-dev @babel/register @babel/core @babel/preset-env
         npm install
     
