@@ -118,6 +118,7 @@ deploy:
   branch: master
 
 # Compress
+all_minifier: true
 ## html
 html_minifier:
   enable: true
