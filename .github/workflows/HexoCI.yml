@@ -35,7 +35,8 @@ jobs:
         npm install hexo-generator-sitemap --save
         npm install hexo-generator-baidu-sitemap --save
         npm install hexo-abbrlink --save
-        npm install hexo-all-minifier --save
+        npm install -g gulp
+        npm install gulp gulp-htmlclean gulp-htmlmin gulp-clean-css gulp-uglify-es gulp-imagemin del gulp-minify-inline-json --save-dev
         npm install
     
     - name: Setup Deploy Private Key For Github and Coding
