@@ -3,10 +3,12 @@ var minifycss = require('gulp-clean-css');
 var uglify = require('gulp-uglify-es').default;
 var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
-// var imagemin = require('gulp-imagemin');
+var imagemin = require('gulp-imagemin');
 var del = require('del');
 var Hexo = require('hexo');
 var minifyInlineJSON = require('gulp-minify-inline-json');
+var pngquant = require('imagemin-pngquant');
+var cache = require('gulp-cache');
 
 gulp.task('clean', function () {
     return del(['public/**/*']);
@@ -61,28 +63,18 @@ gulp.task('minify-html', function () {
         .pipe(gulp.dest('./public'))
 });
 
-//gulp.task('minify-img', function () {
-//    return gulp.src('./public/img/**/*')
-//        .pipe(imagemin([
-//            imagemin.gifsicle({
-//                interlaced: true
-//            }),
-//            imagemin.jpegtran({
-//                progressive: true
-//            }),
-//            imagemin.optipng({
-//                optimizationLevel: 5
-//            }),
-//            imagemin.svgo({
-//                plugins: [{
-//                    removeViewBox: true
-//                }, {
-//                    cleanupIDs: false
-//                }]
-//            })
-//        ]))
-//        .pipe(gulp.dest('./public/img'))
-//});
+gulp.task('minify-img', function () {
+    return gulp.src('./src/images/**')
+        .pipe(gulpif(env==='build', cache(imagemin({
+            optimizationLevel: 5,
+            progressive: true,
+            interlaced: true,
+            multipass: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))))
+        .pipe(gulp.dest('./dist/images'));
+});
 
 gulp.task('minify-js', function () {
     return gulp.src('./public/**/*.js')
