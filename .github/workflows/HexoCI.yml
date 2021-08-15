@@ -41,8 +41,6 @@ jobs:
         npm install imagemin --save-dev
         npm install imagemin-pngquant --save-dev
         npm install --save-dev gulp-cache
-        npm install gulp-cached --save-dev
-        npm install gulp-remember --save-dev
         npm install --save-dev @babel/register @babel/core @babel/preset-env
         npm install
     
