@@ -108,6 +108,27 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-fluid-1.8.11
 
+# Compress
+## Hexo-neat
+neat_enable: true
+
+neat_html:
+  enable: true
+  exclude:
+  
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
