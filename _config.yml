@@ -108,27 +108,6 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-fluid-1.8.11
 
-# Compress
-## Hexo-neat
-neat_enable: true
-
-neat_html:
-  enable: true
-  exclude:
-  
-neat_css:
-  enable: true
-  exclude:
-    - '*.min.css'
-
-neat_js:
-  enable: true
-  mangle: true
-  output:
-  compress:
-  exclude:
-    - '*.min.js'
-
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -137,3 +116,32 @@ deploy:
     github: git@github.com:bingheng-wlm/bingheng-wlm.github.io.git
     coding: git@e.coding.net:bingheng-wlm/blog/blog.git
   branch: master
+
+# Compress
+## hexo-neat
+### md博文压缩
+neat_enable: true
+### 压缩html（ejs，swig等也属于html格式片段）
+neat_html:
+  enable: true
+  exclude:
+### 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+    - '**/*.min.css'
+    - 'jquery.fancybox.min.css'
+    - '**/live2d-widget/waifu.css'
+### 压缩js
+neat_js:
+  enable: true
+  mangle: true #打印日志
+  output:
+  compress:
+  exclude: #排除文件
+    - '*.min.js'
+    - '**/*.min.js'
+    - 'jquery.fancybox.min.js'
+    - '**/live2d-widget/*.js'
+    - '**/live2d-widget/*.min.js'
