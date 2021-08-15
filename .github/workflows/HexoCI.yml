@@ -42,11 +42,12 @@ jobs:
         npm install gulp-htmlmin --save
         npm install gulp-htmlclean --save
         npm install gulp-imagemin --save
-        npm install babel-cli --save
-        npm install gulp-babel --save
-        npm install babel-preset-es2015 --save
+        npm install babel-core@6.26.3 --save
+        npm install gulp-babel@7.0.1 --save
+        npm install babel-preset-es2015@6.24.1 --save
         npm install babel-plugin-transform-remove-strict-mode --save
         npm install --save-dev @babel/plugin-proposal-class-properties
+        npm install gulp-remove-use-strict --save
         
         npm install
     
