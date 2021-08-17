@@ -3,6 +3,7 @@ var minifycss = require('gulp-clean-css');
 var uglify = require('gulp-uglify-es').default;
 var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
+var imagemin = require('gulp-imagemin');
 var del = require('del');
 var Hexo = require('hexo');
 var minifyInlineJSON = require('gulp-minify-inline-json');
@@ -60,6 +61,17 @@ gulp.task('minify-html', function () {
         .pipe(gulp.dest('./public'))
 });
 
+gulp.task('minify-images', function() {
+    return gulp.src(['./public/**/*.png','./public/**/*.jpg','./public/**/*.gif'])
+        .pipe(imagemin(
+        [imagemin.gifsicle({'optimizationLevel': 3}), 
+        imagemin.jpegtran({'progressive': true}), 
+        imagemin.optipng({'optimizationLevel': 7}), 
+        imagemin.svgo({’multipass‘: true})],
+        {'verbose': true}))
+        .pipe(gulp.dest('./public'))
+});
+
 gulp.task('minify-js', function () {
     return gulp.src('./public/**/*.js')
         .pipe(uglify())
@@ -72,4 +84,4 @@ gulp.task('minifyInlineJSON', function () {
         .pipe(gulp.dest('./public'));
 });
 
-gulp.task('default', gulp.series('minify-html', 'minify-css', 'minify-js', 'minifyInlineJSON'));
+gulp.task('default', gulp.series('minify-html', 'minify-css', 'minify-js', 'minify-images', 'minifyInlineJSON'));
