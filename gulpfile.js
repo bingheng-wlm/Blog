@@ -67,7 +67,7 @@ gulp.task('minify-images', function() {
         [imagemin.gifsicle({'optimizationLevel': 3}), 
         imagemin.jpegtran({'progressive': true}), 
         imagemin.optipng({'optimizationLevel': 7}), 
-        imagemin.svgo({’multipass‘: true})],
+        imagemin.svgo()],
         {'verbose': true}))
         .pipe(gulp.dest('./public'))
 });
