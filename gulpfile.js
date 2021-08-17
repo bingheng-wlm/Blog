@@ -61,15 +61,15 @@ gulp.task('minify-html', function () {
         .pipe(gulp.dest('./public'))
 });
 
-gulp.task('minify-images', function() {
-    return gulp.src(['./public/**/*.png','./public/**/*.jpg','./public/**/*.gif'])
-        .pipe(imagemin(
-        [imagemin.gifsicle({'optimizationLevel': 3}), 
-        imagemin.jpegtran({'progressive': true}), 
-        imagemin.optipng({'optimizationLevel': 7}), 
-        imagemin.svgo()],
-        {'verbose': true}))
-        .pipe(gulp.dest('./public'))
+gulp.task('minify-images', function () {
+    gulp.src('src/img/*.{png,jpg,gif,ico}')
+        .pipe(imagemin({
+            optimizationLevel: 5,
+            progressive: true,
+            interlaced: true,
+            multipass: true
+        }))
+        .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('minify-js', function () {
