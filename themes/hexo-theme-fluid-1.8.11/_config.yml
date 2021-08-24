@@ -378,7 +378,11 @@ footer:
       <span id="times">载入时分秒...</span>
       <script src="/js/duration.js"></script>
     </div>
-  '
+    <p>
+      当前CDN节点: <span id="cdn">【未知】</span> 
+      你的ip: <span id="ip">【未知】</span> 
+      你的所在国家/地区: <span id="loc">【未知】 </span></p>
+    '
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
